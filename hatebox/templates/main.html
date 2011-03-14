@@ -16,7 +16,21 @@
  
   </header> 
 
-  <img style="height:200px;" src="{{ hater }}" />
+  <img style="height:200px;" src="{{ hater_img }}" />
+  <p>Ever use a sink where the faucet was 1/2" from the back, so you can't even
+  get your hands in there? What were the designers thinking? Maybe they don't
+  know it's a problem. Tell us what you hate about the things you use.</p>
+  <form action="/hate" method="post">
+      <label for="hate" />
+      <input type="text" name="hate" />
+      <button type="submit">Hate!</button>
+  </form>
+
+  <ul>
+      {% for h in hate %}
+      <li>{{ h.hate }} - {{ h.votes }}</li>
+      {% endfor %}
+  </ul>
  
   <footer> 
  
